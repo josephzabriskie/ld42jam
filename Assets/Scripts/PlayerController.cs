@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     //Movement vars
     private Rigidbody2D rb;
+    public GameObject uiPre;
     private UIScript ui;
     float accel = 10f;
     float decel = 1.0f;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
         this.rb = this.GetComponent<Rigidbody2D>();
         this.sb = GetComponent<ShootBullet>();
         this.lastShotTime = Time.time; // Doing this so that when a wave loads the player doesn't double shoot
-        this.ui = GetComponent<UIScript>();
+        this.ui = uiPre.GetComponent<UIScript>();
     }
 
     // Update is called once per frame
@@ -53,8 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         movementCalc();
         fireShot();
-       
-
+      
     }
 
     void movementCalc() {
@@ -96,13 +96,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10)
-        {
+        //if (collision.gameObject.layer == 10)
+        //{
+        Debug.Log("I'm Hit!");
             ui.Damage();
-            if (ui.currentHealth == 0) {
+            if (ui.currentHealth == 0)
+            {
                 Destroy(this.gameObject, 1.0f);
             }
-        }
+        //}
     }
 
     PlayerInput getPlayerInput()
