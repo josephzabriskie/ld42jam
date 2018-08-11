@@ -15,11 +15,6 @@ public class MainMenuController : MonoBehaviour {
 		this.levelDropDown.ClearOptions();
 		this.levelDropDown.AddOptions(this.levelNames);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void StartGame(){
 		this.LoadScene(this.firstLevel);
@@ -32,7 +27,7 @@ public class MainMenuController : MonoBehaviour {
 		UnityEditor.EditorApplication.isPlaying = false;
 	}
 #endif
-			Application.Quit();
+		Application.Quit();
 	}
 
 	public void StartLevelSelect(){
