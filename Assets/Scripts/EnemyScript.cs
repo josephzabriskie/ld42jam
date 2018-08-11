@@ -114,12 +114,13 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 10)
-        { // right now 10 is player bullet might change (hopefully not)
+       // if (other.gameObject.layer == 10)
+       // { // right now 10 is player bullet might change (hopefully not)
             Destroy(this.gameObject, 1.0f);
             GetComponent<AudioSource>().Play();
             other.gameObject.GetComponent<BulletScript>().Hit();
             alive = false;
-        }
+        Debug.Log("Triggered");
+        //}
     }
 }
