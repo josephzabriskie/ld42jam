@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1054129608709320, guid: 67f9d9dbf70d2714198ee24657f60ae9, type: 2}
   spawnPoint: {fileID: 495897944}
-  velocity: 10
+  velocity: 30
   startingDeg: 0
   shootType: Straight
   numBullets: 0
