@@ -257,7 +257,7 @@ MonoBehaviour:
   bullet: {fileID: 1054129608709320, guid: 67f9d9dbf70d2714198ee24657f60ae9, type: 2}
   spawnPoint: {fileID: 495897944}
   velocity: 10
-  startingDeg: 270
+  startingDeg: 0
   shootType: Straight
   numBullets: 0
   targetGameObject: {fileID: 0}
@@ -532,7 +532,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4ce9e56396f76b74cb70fb745ff1531d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4ce9e56396f76b74cb70fb745ff1531d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -540,7 +540,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4ce9e56396f76b74cb70fb745ff1531d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4ce9e56396f76b74cb70fb745ff1531d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -564,7 +564,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4ce9e56396f76b74cb70fb745ff1531d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce9e56396f76b74cb70fb745ff1531d, type: 3}
