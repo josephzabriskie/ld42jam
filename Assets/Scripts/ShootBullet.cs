@@ -46,6 +46,7 @@ public class ShootBullet : MonoBehaviour
 
     void ShootStraight()
     {
+        Debug.Log("Creating Bullet");
         GameObject bullet = Instantiate(this.bullet, this.spawnPoint.position, this.spawnPoint.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * Mathf.Cos(currentRads), velocity * Mathf.Sin(currentRads));
         //this.audioS.PlayOneShot(this.shootSound);

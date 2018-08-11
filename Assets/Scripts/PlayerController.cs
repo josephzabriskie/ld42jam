@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool allowMove = true;
 
     //Shoot vars
+    ShootBullet sb;
     public bool allowShoot = true;
     float lastShotTime = 0.0f;
     float shotDelay = 0.5f;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         this.rb = this.GetComponent<Rigidbody2D>();
+        this.sb = GetComponent<ShootBullet>();
         this.lastShotTime = Time.time; // Doing this so that when a wave loads the player doesn't double shoot
     }
 
@@ -61,9 +63,11 @@ public class PlayerController : MonoBehaviour
         { // SLOW DOWN
             this.rb.velocity = new Vector2(0, 0);
         }
-
+        Debug.Log("Trigger Pull?");
         if (this.pi.fire1 && Time.time - this.lastShotTime > this.shotDelay && this.allowShoot)
         {
+            Debug.Log("Shot");
+            sb.Shoot();
             this.lastShotTime = Time.time;
         }
 
