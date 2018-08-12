@@ -10,6 +10,8 @@ public class EnemyScript : MonoBehaviour
     public string movementType;
     //Circle around point
     Vector3 center;
+    GameObject mainChar;
+    private Transform playerPosition;
     public float radius = 1.0f;
     public float rotateSpeed = 2.0f;
     private float angle = 0.0f;
@@ -31,6 +33,7 @@ public class EnemyScript : MonoBehaviour
         this.rb = GetComponent<Rigidbody2D>();
         //this.sr = GetComponent<SpriteRenderer>();
         this.center = this.transform.position; // Set center to where we currently are positioned
+        playerPosition = mainChar.GetComponent<Transform>();
     }
 
     void Update()
@@ -57,6 +60,9 @@ public class EnemyScript : MonoBehaviour
             CircleUpdate();
         if (this.movementType == "Line" && this.alive)
             LineUpdate();
+        if (this.movementType == "Follow" && this.alive)
+            FollowUpdate();
+
         //Else do nothing, just sits there
     }
 
@@ -108,8 +114,9 @@ public class EnemyScript : MonoBehaviour
         this.transform.position = this.center + offset;
     }
 
-    void LinearUpdate()
+    void FollowUpdate()
     {
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
