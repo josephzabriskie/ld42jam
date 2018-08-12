@@ -6,8 +6,8 @@ public class BulletScript : MonoBehaviour
 {
     float maxTime = 5;
     public GameObject ps;
-    public bool seeking = false;
-    public GameObject target = null;
+    //public bool seeking = false;
+    //public GameObject target = null;
 
     void Awake()
     {
@@ -21,12 +21,12 @@ public class BulletScript : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if (this.seeking && this.target != null){
-            Vector2 direction = (Vector2)this.target.transform.position - (Vector2)gameObject.transform.position;
-            direction.Normalize();
-            float rotateAmount = Vector3.Cross(direction, transform.up).z;
+        //if (this.seeking && this.target != null){
+        //    Vector2 direction = (Vector2)this.target.transform.position - (Vector2)gameObject.transform.position;
+        //    direction.Normalize();
+        //    float rotateAmount = Vector3.Cross(direction, transform.up).z;
             
-        }
+        //}
     }
 
 }

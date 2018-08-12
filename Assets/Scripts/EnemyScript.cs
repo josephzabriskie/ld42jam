@@ -120,7 +120,7 @@ public class EnemyScript : MonoBehaviour
         //intersectPosition.y = this.transform.position.y;
         //Vector3 newLookPosition= Vector3.Lerp(intersectPosition, playerPosition.position, Time.deltaTime);
         //this.transform.LookAt(newLookPosition);
-        this.transform.Translate(Vector3.left * Time.deltaTime);
+        this.transform.Translate(Vector3.left *3.0f * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
