@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47d3de1745911444be782e49aaf103f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPre: {fileID: 0}
+  uiPre: {fileID: 897908426}
   allowMove: 1
   allowShoot: 1
 --- !u!114 &804607952
@@ -475,6 +475,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400052, guid: ea023f7401c05784283183fc74dbf782,
     type: 3}
   m_PrefabInternal: {fileID: 29195775}
+--- !u!1 &897908426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1761891502805680, guid: f5de047f1478db3418f3b6179d9acf71,
+    type: 2}
+  m_PrefabInternal: {fileID: 913331586}
 --- !u!1001 &913331586
 Prefab:
   m_ObjectHideFlags: 0
