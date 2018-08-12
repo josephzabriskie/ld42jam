@@ -117,15 +117,21 @@ public class EnemyScript : MonoBehaviour
 
     void FollowUpdate()
     {
-        Vector2 direction = (Vector2)playerPosition.position - rb.position;
+        if (playerPosition) {
+            Vector2 direction = (Vector2)playerPosition.position - rb.position;
 
-        direction.Normalize();
+            direction.Normalize();
 
-        float rotateAmount = Vector3.Cross(direction, transform.right).z;
+            float rotateAmount = Vector3.Cross(direction, transform.right).z;
 
-        rb.angularVelocity = -rotateAmount * rotateSpeed;
+            rb.angularVelocity = -rotateAmount * rotateSpeed;
 
-        rb.velocity = transform.right * speed;
+            rb.velocity = transform.right * speed;
+        }
+        else
+        {
+            rb.velocity = transform.right * speed;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -137,5 +143,6 @@ public class EnemyScript : MonoBehaviour
             other.gameObject.GetComponent<BulletScript>().Hit();
             alive = false;
         }
+       
     }
 }

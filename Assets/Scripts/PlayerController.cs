@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     ShootBullet sb;
     public bool allowShoot = true;
     float lastShotTime = 0.0f;
-    float shotDelay = 0.5f;
+    float lastTimeHit = 0.0f;
+    public float shotDelay = 0.5f;
+    public float hitDelay = 0.5f;
 
     public struct PlayerInput
     {
@@ -108,9 +110,27 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.layer == 13)
         {
-            Debug.Log("I'm Healing!");
-            ui.Heal();
-            
+            if (ui.currentHealth != 3) {
+                Debug.Log("I'm Healing!");
+                ui.Heal();
+            }
+        }
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 11)
+        {
+            Debug.Log("Collision with enemy");
+            if (Time.time - this.lastTimeHit > this.hitDelay)
+            {
+                ui.Damage();
+                this.lastTimeHit = Time.time;
+            }
+            if (ui.currentHealth == 0)
+            {
+                Destroy(this.gameObject, 1.0f);
+            }
         }
     }
 

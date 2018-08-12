@@ -682,6 +682,8 @@ MonoBehaviour:
   uiPre: {fileID: 897908426}
   allowMove: 1
   allowShoot: 1
+  shotDelay: 0.5
+  hitDelay: 1
 --- !u!114 &804607952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,6 +958,11 @@ Prefab:
       propertyPath: rotateSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114779774195433052, guid: 9dad159419585d3438f0fed1e0ee45e0,
+        type: 2}
+      propertyPath: mainChar
+      value: 
+      objectReference: {fileID: 804607949}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dad159419585d3438f0fed1e0ee45e0, type: 2}
   m_IsPrefabAsset: 0
