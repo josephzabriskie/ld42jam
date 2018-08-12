@@ -15,7 +15,7 @@ public class ShootBullet : MonoBehaviour
     //public AudioClip shootSound;
 
     public string shootType = "Straight"; //Straight, CircleWave, Targeted
-                                          //CircleWave
+                                          //CircleWave, Homing
     public int numBullets;
 
     //Target
@@ -76,6 +76,17 @@ public class ShootBullet : MonoBehaviour
         GameObject bullet = Instantiate(this.bullet, this.spawnPoint.position, this.spawnPoint.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * Mathf.Cos(rads), velocity * Mathf.Sin(rads));
         //this.audioS.PlayOneShot(this.shootSound);
+    }
+
+    void ShootHoming()
+    {
+        Vector3 position = this.spawnPoint.position;
+        position.y += offset;
+        GameObject bullet = Instantiate(this.bullet, position, this.bullet.transform.rotation);
+        BulletScript bs = bullet.GetComponent<BulletScript>();
+        bs.seeking = true;
+        bs.target = this.targetGameObject;
+        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * Mathf.Cos(currentRads), velocity * Mathf.Sin(currentRads));
     }
 
 }
