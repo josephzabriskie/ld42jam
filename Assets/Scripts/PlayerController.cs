@@ -94,18 +94,19 @@ public class PlayerController : MonoBehaviour
         return ((val1 > 0 && val2 < 0) || (val1 < 0 && val2 > 0)) ? true : false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.layer == 12)
+        if (other.gameObject.layer == 12)
         {
         Debug.Log("I'm Hit!");
             ui.Damage();
+            other.GetComponent<BulletScript>().Hit();
             if (ui.currentHealth == 0)
             {
                 Destroy(this.gameObject, 1.0f);
             }
         }
-        if (collision.gameObject.layer == 13)
+        if (other.gameObject.layer == 13)
         {
             Debug.Log("I'm Healing!");
             ui.Heal();
