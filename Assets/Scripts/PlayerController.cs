@@ -105,6 +105,12 @@ public class PlayerController : MonoBehaviour
                 Destroy(this.gameObject, 1.0f);
             }
         }
+        if (collision.gameObject.layer == 13)
+        {
+            Debug.Log("I'm Healing!");
+            ui.Heal();
+            
+        }
     }
 
     PlayerInput getPlayerInput()
