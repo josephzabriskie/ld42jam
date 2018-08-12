@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     float maxTime = 5;
+    public GameObject ps;
 
     void Awake()
     {
@@ -13,6 +14,7 @@ public class BulletScript : MonoBehaviour
 
     public void Hit()
     {
+        Instantiate(this.ps, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 
