@@ -18,7 +18,7 @@ TagManager:
   - PlayerBullet
   - Enemy
   - EnemyBullet
-  - 
+  - Pickup
   - 
   - 
   - 
@@ -43,4 +43,16 @@ TagManager:
     locked: 0
   - name: PauseMenu
     uniqueID: 2667174283
+    locked: 0
+  - name: Player
+    uniqueID: 376973689
+    locked: 0
+  - name: Bullet
+    uniqueID: 710311985
+    locked: 0
+  - name: Pickup
+    uniqueID: 2586269411
+    locked: 0
+  - name: Enemy/Obstacle
+    uniqueID: 1718924349
     locked: 0
