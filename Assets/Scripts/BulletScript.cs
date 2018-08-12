@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    enum BulletTypes{
+        normal,
+        seeking
+    };
+
     float maxTime = 5;
     public GameObject ps;
+    public BulletType bt;
 
     void Awake()
     {
