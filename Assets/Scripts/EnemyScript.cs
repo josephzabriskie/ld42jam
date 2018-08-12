@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
     //Circle around point
     Vector3 center;
     public GameObject mainChar;
+    public float speed = 5.0f;
     private Transform playerPosition;
     public float radius = 1.0f;
     public float rotateSpeed = 2.0f;
@@ -116,11 +117,15 @@ public class EnemyScript : MonoBehaviour
 
     void FollowUpdate()
     {
-        //Vector3 intersectPosition = playerPosition.position;
-        //intersectPosition.y = this.transform.position.y;
-        //Vector3 newLookPosition= Vector3.Lerp(intersectPosition, playerPosition.position, Time.deltaTime);
-        //this.transform.LookAt(newLookPosition);
-        this.transform.Translate(Vector3.left *3.0f * Time.deltaTime);
+        Vector2 direction = (Vector2)playerPosition.position - rb.position;
+
+        direction.Normalize();
+
+        float rotateAmount = Vector3.Cross(direction, transform.right).z;
+
+        rb.angularVelocity = -rotateAmount * rotateSpeed;
+
+        rb.velocity = transform.right * speed;
     }
 
     void OnTriggerEnter2D(Collider2D other)
