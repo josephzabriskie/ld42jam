@@ -9,6 +9,7 @@ public class ShootBullet : MonoBehaviour
     public Transform spawnPoint;
     public float velocity = 10.0f;
     public float startingDeg = 270.0f;
+    public float offset = 0.0f;
     float currentRads;
     //AudioSource audioS;
     //public AudioClip shootSound;
@@ -46,8 +47,9 @@ public class ShootBullet : MonoBehaviour
 
     void ShootStraight()
     {
-    
-        GameObject bullet = Instantiate(this.bullet, this.spawnPoint.position, this.bullet.transform.rotation);
+        Vector3 position = this.spawnPoint.position;
+        position.y = position.y + offset;
+        GameObject bullet = Instantiate(this.bullet, position, this.bullet.transform.rotation);
      
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * Mathf.Cos(currentRads), velocity * Mathf.Sin(currentRads));
         //this.audioS.PlayOneShot(this.shootSound);

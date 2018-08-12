@@ -96,15 +96,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.layer == 10)
-        //{
+        if (collision.gameObject.layer == 12)
+        {
         Debug.Log("I'm Hit!");
             ui.Damage();
             if (ui.currentHealth == 0)
             {
                 Destroy(this.gameObject, 1.0f);
             }
-        //}
+        }
     }
 
     PlayerInput getPlayerInput()
