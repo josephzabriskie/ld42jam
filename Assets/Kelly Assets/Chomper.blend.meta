@@ -1,17 +1,24 @@
 fileFormatVersion: 2
-guid: 951a71f7039c97848859a37fbda18c70
+guid: d92f6cbdc3923474181194d812c3b038
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Chomps
+    100004: Hat
     400000: //RootNode
-    2100000: Material_001__Untitled
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Wurm
+    400002: Chomps
+    400004: Hat
+    2100000: Material_002
+    2100002: Material_001
+    2300000: Chomps
+    2300002: Hat
+    3300000: Chomps
+    3300002: Hat
+    4300000: Hat
+    4300002: Chomps
     7400000: Default Take
     9500000: //RootNode
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
