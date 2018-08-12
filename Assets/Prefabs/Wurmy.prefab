@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23274083565253542}
   - component: {fileID: 95496894195638562}
   - component: {fileID: 114270374537892784}
-  - component: {fileID: 114391917836401726}
   m_Layer: 0
   m_Name: Wurmy
   m_TagString: Untagged
@@ -124,22 +123,3 @@ MonoBehaviour:
   horizPath: 0
   allowShoot: 0
   shotDelay: 1
---- !u!114 &114391917836401726
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1462228046110258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6317d46f7fbdbb4fb59e989b0f5cd76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  velocity: 10
-  startingDeg: 270
-  offset: 0
-  shootType: Straight
-  numBullets: 0
-  targetGameObject: {fileID: 0}
