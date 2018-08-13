@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private UIScript ui;
     float accel = 10f;
     float decel = 1.0f;
-    float maxSpeed = 7.0f;
+    public float maxSpeed;
     public bool allowMove = true;
 
     //Shoot vars
