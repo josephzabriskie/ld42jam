@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.layer == 13)
         {
+            other.GetComponent<PickupScript>().Hit();
             if (ui.currentHealth != 3) {
                 Debug.Log("I'm Healing!");
                 ui.Heal();
