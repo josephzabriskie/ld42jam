@@ -138,8 +138,27 @@ public class PlayerController : MonoBehaviour
                 Destroy(this.gameObject, 1.0f);
             }
         }
+     
     }
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            Debug.Log("Collision with an Object");
+            if (Time.time - this.lastTimeHit > this.hitDelay)
+            {
+                ui.Damage();
+                this.lastTimeHit = Time.time;
+                Animator.SetBool("HitAnimation", true);
+
+            }
+            if (ui.currentHealth == 0)
+            {
+                Destroy(this.gameObject, 1.0f);
+            }
+        }
+    }
+
 
     PlayerInput getPlayerInput()
     {

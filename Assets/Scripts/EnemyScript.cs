@@ -174,11 +174,5 @@ public class EnemyScript : MonoBehaviour
             alive = false;
         }
     }
-    void OnCollisionEnter2D(Collision collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            Physics.IgnoreLayerCollision(8, 11);
-        }
-    }
+   
 }
