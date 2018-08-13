@@ -893,7 +893,7 @@ Prefab:
         type: 2}
       propertyPath: mainChar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1457208144}
     - target: {fileID: 50345660118297462, guid: 9dad159419585d3438f0fed1e0ee45e0,
         type: 2}
       propertyPath: m_Mass

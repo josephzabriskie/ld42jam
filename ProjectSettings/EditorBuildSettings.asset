@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelZero.unity
     guid: 1301c7986a97c4f408ac4a0ac6623154
+  - enabled: 1
+    path: Assets/Scenes/VictoryTemp.unity
+    guid: d6cec3cbce602bd4a89b654e5cb1e729
   m_configObjects: {}
