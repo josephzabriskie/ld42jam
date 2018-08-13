@@ -6,18 +6,24 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour {
 
-	public List<string> levelNames = new List<string>(new string[]{ "-", "JoeRezTest", "SampleScene" });
-	public string firstLevel = "JoeRezTest";
+	//public List<string> levelNames = new List<string>(new string[]{ "-", "JoeRezTest", "SampleScene" });
+	//public string firstLevel = "JoeRezTest";
 	public Dropdown levelDropDown;
+	LevelSupervisor ls;
 
 	// Use this for initialization
 	void Start () {
+		this.ls = GameObject.FindGameObjectWithTag("LevelSupervisor").GetComponent<LevelSupervisor>();
 		this.levelDropDown.ClearOptions();
-		this.levelDropDown.AddOptions(this.levelNames);
+		this.levelDropDown.AddOptions(new List<string>(new string[]{"-"}));
+		for(int i = 0; i < this.ls.levelsBeat.Count; i++){
+			if (this.ls.levelsBeat[i])
+				this.levelDropDown.AddOptions(new List<string>(new string[]{this.ls.levelNames[i]}));
+		}
 	}
 
 	public void StartGame(){
-		this.LoadScene(this.firstLevel);
+		this.LoadScene(this.ls.levelNames[0]);
 	}
 
 	public void QuitGame(){
@@ -35,8 +41,8 @@ public class MainMenuController : MonoBehaviour {
 			Debug.Log("Level 0 is reserved as a 'no choice' option, do nothing");
 			return;
 		}
-		Debug.Log("Starting Level: " + levelDropDown.value.ToString());
-		this.LoadScene(this.levelNames[levelDropDown.value]);
+		Debug.Log("Starting Level: " + (levelDropDown.value - 1).ToString());
+		this.LoadScene(this.ls.levelNames[levelDropDown.value - 1]);
 	}
 
 	void LoadScene(string scene){
