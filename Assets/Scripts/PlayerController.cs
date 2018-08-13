@@ -115,11 +115,7 @@ public class PlayerController : MonoBehaviour
                 ui.Heal();
             }
         }
-        
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 11)
+        if (other.gameObject.layer == 11)
         {
             Debug.Log("Collision with enemy");
             if (Time.time - this.lastTimeHit > this.hitDelay)
@@ -133,6 +129,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    
 
     PlayerInput getPlayerInput()
     {
