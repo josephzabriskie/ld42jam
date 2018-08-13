@@ -9,6 +9,7 @@ public class LevelSupervisor : MonoBehaviour {
 	//Set in editor
 	public List<string> levelNames = new List<string>(new string[]{});
 	//Make sure that you also set the length of levelsAccessible to the same as number of levels that you have
+	// Player should be able to go back to any level they've started using this.
 	//Set in editor
 	public List<bool> levelsAccessible = new List<bool>();
 	// Name of scene to go to when we run out of levels
@@ -43,11 +44,9 @@ public class LevelSupervisor : MonoBehaviour {
 		SceneManager.LoadScene(this.levelNames[this.currLevel]);
 	}
 	//!! This function is the one that matters!
-	// Call this in other scenes to say"Level won/lost" with true/false. Restart scene on false, go to next scene on true
+	// Call this in other scenes to say"Level won/lost" with true/false. Function will restart scene on false, or go to next scene on true
 	// A script should do a "GameObject.FindGameObjectWithTag("LevelSupervisor")" to get this persistant object, then call
 	// Level done whenever the level logic says we're done. e.g. on player kill, say LevelDone(false) to restart it.
-
-	// Player should be able to go back to any level they've started.
 	public void LevelDone(bool victory){
 		if (victory){
 			this.StartNextLevel();
