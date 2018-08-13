@@ -126,11 +126,11 @@ public class EnemyScript : MonoBehaviour
 
             direction.Normalize();
 
-            rotateAmount = Vector3.Cross(direction, transform.right).z;
+            rotateAmount = Vector3.Cross(direction, -transform.right).z;
 
             rb.angularVelocity = -rotateAmount * rotateSpeed;
            
-            rb.velocity = transform.right * speed;
+            rb.velocity = -transform.right * speed;
             this.enemyCollider.transform.rotation = rb.transform.rotation;
         }
         else
