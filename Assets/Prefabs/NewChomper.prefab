@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 50569802999217454}
   - component: {fileID: 60325230760466938}
   - component: {fileID: 114593203661001602}
+  - component: {fileID: 114808960643442068}
   m_Layer: 0
   m_Name: NewChomper
   m_TagString: Untagged
@@ -355,7 +356,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113477389695632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 102.479324, y: 9.673751, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886617307803382}
@@ -480,7 +481,7 @@ MonoBehaviour:
   movementType: Follow
   mainChar: {fileID: 0}
   speed: 10
-  isActive: 1
+  isActive: 0
   rotateAmount: 0
   radius: 1
   rotateSpeed: 200
@@ -490,6 +491,18 @@ MonoBehaviour:
   horizPath: 0
   allowShoot: 0
   shotDelay: 1
+--- !u!114 &114808960643442068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113477389695632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f7b1364df0bdc4e92505ede9dcde1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 9
 --- !u!137 &137183050335630980
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

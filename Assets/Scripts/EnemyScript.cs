@@ -174,7 +174,7 @@ public class EnemyScript : MonoBehaviour
             alive = false;
         }
     }
-    void OnCollisionEnter2D(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8)
         {

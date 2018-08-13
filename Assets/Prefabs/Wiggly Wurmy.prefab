@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 50415240695575734}
   - component: {fileID: 114023748977515252}
   - component: {fileID: 60661279208217176}
+  - component: {fileID: 114347298293082950}
   m_Layer: 11
   m_Name: Wiggly Wurmy
   m_TagString: Untagged
@@ -303,8 +304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
   movementType: Follow
-  mainChar: {fileID: 1627652257890398, guid: fe9a2a8fbda705642ac914245aec2c0d, type: 2}
+  mainChar: {fileID: 0}
   speed: 15
+  isActive: 0
   rotateAmount: 0
   radius: 1
   rotateSpeed: 500
@@ -314,6 +316,18 @@ MonoBehaviour:
   horizPath: 0
   allowShoot: 0
   shotDelay: 1
+--- !u!114 &114347298293082950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713354896148230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f7b1364df0bdc4e92505ede9dcde1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 9
 --- !u!137 &137059563746074928
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
