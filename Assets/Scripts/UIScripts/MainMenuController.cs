@@ -16,14 +16,14 @@ public class MainMenuController : MonoBehaviour {
 		this.ls = GameObject.FindGameObjectWithTag("LevelSupervisor").GetComponent<LevelSupervisor>();
 		this.levelDropDown.ClearOptions();
 		this.levelDropDown.AddOptions(new List<string>(new string[]{"-"}));
-		for(int i = 0; i < this.ls.levelsBeat.Count; i++){
-			if (this.ls.levelsBeat[i])
+		for(int i = 0; i < this.ls.levelsAccessible.Count; i++){
+			if (this.ls.levelsAccessible[i])
 				this.levelDropDown.AddOptions(new List<string>(new string[]{this.ls.levelNames[i]}));
 		}
 	}
 
 	public void StartGame(){
-		this.LoadScene(this.ls.levelNames[0]);
+		ls.StartGame();
 	}
 
 	public void QuitGame(){
@@ -42,10 +42,6 @@ public class MainMenuController : MonoBehaviour {
 			return;
 		}
 		Debug.Log("Starting Level: " + (levelDropDown.value - 1).ToString());
-		this.LoadScene(this.ls.levelNames[levelDropDown.value - 1]);
-	}
-
-	void LoadScene(string scene){
-		SceneManager.LoadScene(scene);
+		this.ls.SelectLevelStart(levelDropDown.value - 1);
 	}
 }
