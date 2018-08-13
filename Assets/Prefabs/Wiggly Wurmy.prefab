@@ -312,7 +312,8 @@ MonoBehaviour:
   radius: 1
   rotateSpeed: 500
   cwPath: 1
-  Health: 2
+  alive: 1
+  Health: 1
   linearReverse: 0
   horizPath: 0
   allowShoot: 0

@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 11)
         {
             Debug.Log("Collision with enemy");
-            if (Time.time - this.lastTimeHit > this.hitDelay)
+            if (Time.time - this.lastTimeHit > this.hitDelay && other.gameObject.GetComponent<EnemyScript>().alive)
             {
                 ui.Damage();
                 this.lastTimeHit = Time.time;

@@ -483,10 +483,12 @@ MonoBehaviour:
   speed: 10
   isActive: 0
   rotateAmount: 0
+  activationOffset: 0
   radius: 1
   rotateSpeed: 500
   cwPath: 1
-  Health: 5
+  alive: 1
+  Health: 3
   linearReverse: 0
   horizPath: 0
   allowShoot: 0

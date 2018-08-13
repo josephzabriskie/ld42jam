@@ -1078,11 +1078,12 @@ MonoBehaviour:
   radius: 0.25
   rotateSpeed: 1
   cwPath: 1
-  Health: 5
+  alive: 1
+  Health: 30
   linearReverse: 0
   horizPath: 0
   allowShoot: 1
-  shotDelay: 0.5
+  shotDelay: 0.25
 --- !u!114 &114822802830131694
 MonoBehaviour:
   m_ObjectHideFlags: 1

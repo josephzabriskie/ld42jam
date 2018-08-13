@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
     public float rotateSpeed = 2.0f;
     private float angle = 0.0f;
     public bool cwPath = true;
-    bool alive = true;
+    public bool alive = true;
     public float Health = 5;
     //Line bool
     public bool linearReverse = false;
@@ -158,7 +158,7 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 10)
+        if (other.gameObject.layer == 10 && this.isActive)
         {
             Health--;
             other.gameObject.GetComponent<BulletScript>().Hit();
