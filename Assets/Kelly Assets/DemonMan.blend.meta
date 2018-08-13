@@ -4,90 +4,73 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Bone
-    100002: Bone_004
-    100004: Bone_005
-    100006: Bone_009
-    100008: Bone_010
-    100010: Bone_014
-    100012: Bone_022
-    100014: Chest
-    100016: DemonBackpack
-    100018: DemonBody
-    100020: DemonHead
-    100022: //RootNode
-    100024: Gatling_Gun
-    100026: Gatling_Gun_Casing
-    100028: Gun
-    100030: Gun_Casing
-    100032: Left_Ankle
-    100034: Left_Bicep
-    100036: Left_Calf
-    100038: Left_Foot
-    100040: Left_forearm
-    100042: Left_Hip
-    100044: Left_Sholder
-    100046: Left_Thigh
-    100048: Right_Ankle
-    100050: Right_Bicep
-    100052: Right_Calf
-    100054: Right_Foot
-    100056: Right_forearm
-    100058: Right_Hip
-    100060: Right_Sholder
-    100062: Right_Thigh
-    100064: SpaceBones
+    100002: Bone_001
+    100004: Bone_002
+    100006: Bone_003
+    100008: Bone_004
+    100010: Bone_005
+    100012: Bone_006
+    100014: Bone_007
+    100016: Bone_008
+    100018: Bone_009
+    100020: Bone_010
+    100022: Bone_011
+    100024: Bone_012
+    100026: Bone_013
+    100028: Bone_014
+    100030: Bone_015
+    100032: Bone_016
+    100034: Bone_017
+    100036: Bone_018
+    100038: Bone_019
+    100040: Bone_020
+    100042: Bone_021
+    100044: DemonBackpack
+    100046: DemonBody
+    100048: DemonHead
+    100050: //RootNode
+    100052: SpaceBones
     400000: Bone
-    400002: Bone_004
-    400004: Bone_005
-    400006: Bone_009
-    400008: Bone_010
-    400010: Bone_014
-    400012: Bone_022
-    400014: Chest
-    400016: DemonBackpack
-    400018: DemonBody
-    400020: DemonHead
-    400022: //RootNode
-    400024: Gatling_Gun
-    400026: Gatling_Gun_Casing
-    400028: Gun
-    400030: Gun_Casing
-    400032: Left_Ankle
-    400034: Left_Bicep
-    400036: Left_Calf
-    400038: Left_Foot
-    400040: Left_forearm
-    400042: Left_Hip
-    400044: Left_Sholder
-    400046: Left_Thigh
-    400048: Right_Ankle
-    400050: Right_Bicep
-    400052: Right_Calf
-    400054: Right_Foot
-    400056: Right_forearm
-    400058: Right_Hip
-    400060: Right_Sholder
-    400062: Right_Thigh
-    400064: SpaceBones
-    2100000: Material_007
+    400002: Bone_001
+    400004: Bone_002
+    400006: Bone_003
+    400008: Bone_004
+    400010: Bone_005
+    400012: Bone_006
+    400014: Bone_007
+    400016: Bone_008
+    400018: Bone_009
+    400020: Bone_010
+    400022: Bone_011
+    400024: Bone_012
+    400026: Bone_013
+    400028: Bone_014
+    400030: Bone_015
+    400032: Bone_016
+    400034: Bone_017
+    400036: Bone_018
+    400038: Bone_019
+    400040: Bone_020
+    400042: Bone_021
+    400044: DemonBackpack
+    400046: DemonBody
+    400048: DemonHead
+    400050: //RootNode
+    400052: SpaceBones
+    2100000: Material_005
     2100002: Material_003
     2100004: Material_002
-    2100006: Material_006
-    2100008: Material_005
-    4300000: Gatling_Gun_Casing
+    2300000: DemonBackpack
+    2300002: DemonBody
+    2300004: DemonHead
+    3300000: DemonBackpack
+    3300002: DemonBody
+    3300004: DemonHead
+    4300000: DemonHead
     4300002: DemonBackpack
     4300004: DemonBody
-    4300006: Gatling_Gun
-    4300008: DemonHead
     7400000: Default Take
-    7400002: Gatling_Gun
-    7400004: Gun_CasingAction
     9500000: //RootNode
-    13700000: DemonBackpack
-    13700002: DemonBody
-    13700004: DemonHead
-    13700006: Gatling_Gun
-    13700008: Gatling_Gun_Casing
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -115,91 +98,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
-      firstFrame: 0
-      lastFrame: 39
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Gatling_Gun
-      takeName: Gatling_Gun
-      firstFrame: -1
-      lastFrame: 39
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Gun_CasingAction
-      takeName: Gun_CasingAction
-      firstFrame: -1
-      lastFrame: 39
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
