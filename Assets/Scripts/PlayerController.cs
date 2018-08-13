@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     float decel = 1.0f;
     public float maxSpeed;
     public bool allowMove = true;
+    public Animator Animator;
+    public AnimatorClipInfo[] ClipInfo;
+
 
     //Shoot vars
     ShootBullet sb;
@@ -50,6 +54,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         this.pi = getPlayerInput();
+        DeassertTriggers();
     }
 
     void FixedUpdate()
@@ -102,11 +107,13 @@ public class PlayerController : MonoBehaviour
         {
         Debug.Log("I'm Hit!");
             ui.Damage();
+            Animator.SetBool("HitAnimation", true);
             other.GetComponent<BulletScript>().Hit();
             if (ui.currentHealth == 0)
             {
                 Destroy(this.gameObject, 1.0f);
             }
+            
         }
         if (other.gameObject.layer == 13)
         {
@@ -141,5 +148,15 @@ public class PlayerController : MonoBehaviour
         ret_pi.moving = (!(x == 0 && y == 0)) ? true : false;
         ret_pi.fire = (Input.GetAxis("Fire") != 0) ? true : false;
         return ret_pi;
+    }
+
+    void DeassertTriggers()
+    {
+        ClipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+        if (ClipInfo[0].clip.name == "Hit")
+        {
+            Animator.SetBool("HitAnimation", false);
+        }
+        
     }
 }
