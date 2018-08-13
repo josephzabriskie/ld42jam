@@ -12,6 +12,7 @@ public class EnemyScript : MonoBehaviour
     Vector3 center;
     public GameObject mainChar;
     public float speed = 5.0f;
+    private bool isActive = false;
     public float rotateAmount;
     private Transform playerPosition;
     PolygonCollider2D enemyCollider;
@@ -42,18 +43,21 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - this.lastShotTime > this.shotDelay && this.alive && this.allowShoot)
+        if (isActive)
         {
-            sb.Shoot();
-            this.lastShotTime = Time.time;
+            if (Time.time - this.lastShotTime > this.shotDelay && this.alive && this.allowShoot)
+            {
+                sb.Shoot();
+                this.lastShotTime = Time.time;
+            }
+            if (!alive)
+            {
+                this.transform.Rotate(new Vector3(0, 0, 2));
+                //don't need right now, looks alright
+                this.transform.localScale = new Vector3(this.transform.localScale.x * 0.99f, this.transform.localScale.y * 0.99f, 1.0f);
+            }
+            this.enemyCollider.transform.rotation = rb.transform.rotation;
         }
-        if (!alive)
-        {
-            this.transform.Rotate(new Vector3(0, 0, 2));
-            //don't need right now, looks alright
-            this.transform.localScale = new Vector3(this.transform.localScale.x * 0.99f, this.transform.localScale.y * 0.99f, 1.0f);
-        }
-        this.enemyCollider.transform.rotation = rb.transform.rotation;
     }
 
     void FixedUpdate()
@@ -61,13 +65,15 @@ public class EnemyScript : MonoBehaviour
         //Add these lines if you want to make the baddie fly away randomly, polish
         //if (!this.alive)
         //	this.rb.AddForce (new Vector2 (0, Random.Range (0, 10)));
-        if (this.movementType == "Circle" && this.alive)
-            CircleUpdate();
-        if (this.movementType == "Line" && this.alive)
-            LineUpdate();
-        if (this.movementType == "Follow" && this.alive)
-            FollowUpdate();
-
+        if (isActive)
+        {
+            if (this.movementType == "Circle" && this.alive)
+                CircleUpdate();
+            if (this.movementType == "Line" && this.alive)
+                LineUpdate();
+            if (this.movementType == "Follow" && this.alive)
+                FollowUpdate();
+        }
         //Else do nothing, just sits there
     }
 
@@ -152,7 +158,11 @@ public class EnemyScript : MonoBehaviour
             other.gameObject.GetComponent<BulletScript>().Hit();
             alive = false;
         }
-        if (other.gameObject.layer == 14)
+        if (other.gameObject.layer == 15)
+        { // right now 10 is player bullet might change (hopefully not)
+            isActive = true;
+        }
+        if (other.gameObject.layer == 16)
         { // right now 10 is player bullet might change (hopefully not)
             Destroy(this.gameObject, 1.0f);
             alive = false;
