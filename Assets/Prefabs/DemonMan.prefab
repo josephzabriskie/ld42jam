@@ -1039,6 +1039,7 @@ MonoBehaviour:
   speed: 5
   isActive: 1
   rotateAmount: 0
+  activationOffset: 5
   radius: 10
   rotateSpeed: 1
   cwPath: 1

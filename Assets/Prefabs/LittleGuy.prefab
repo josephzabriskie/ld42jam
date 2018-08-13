@@ -1047,7 +1047,7 @@ MonoBehaviour:
   uiPre: {fileID: 0}
   maxSpeed: 20
   allowMove: 1
-  Animator: {fileID: 0}
+  Animator: {fileID: 95449627488407446}
   allowShoot: 1
   shotDelay: 0.25
   hitDelay: 1

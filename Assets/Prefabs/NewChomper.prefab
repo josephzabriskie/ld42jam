@@ -355,8 +355,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113477389695632}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.479324, y: 9.673751, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 170.9, y: 13.950153, z: 1.234375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886617307803382}
@@ -484,7 +484,7 @@ MonoBehaviour:
   isActive: 0
   rotateAmount: 0
   radius: 1
-  rotateSpeed: 200
+  rotateSpeed: 500
   cwPath: 1
   Health: 5
   linearReverse: 0
