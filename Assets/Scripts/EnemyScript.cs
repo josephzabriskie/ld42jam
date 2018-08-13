@@ -12,7 +12,7 @@ public class EnemyScript : MonoBehaviour
     Vector3 center;
     public GameObject mainChar;
     public float speed = 5.0f;
-    private bool isActive = false;
+    public bool isActive = false;
     public float rotateAmount;
     private Transform playerPosition;
     PolygonCollider2D enemyCollider;
@@ -21,6 +21,7 @@ public class EnemyScript : MonoBehaviour
     private float angle = 0.0f;
     public bool cwPath = true;
     bool alive = true;
+    public float Health = 5;
     //Line bool
     public bool linearReverse = false;
     public bool horizPath = true;
@@ -127,7 +128,8 @@ public class EnemyScript : MonoBehaviour
 
     void FollowUpdate()
     {
-        if (playerPosition && playerPosition.position.x  < this.transform.position.x) {
+        if (playerPosition && playerPosition.position.x < this.transform.position.x)
+        {
             Vector2 direction = (Vector2)playerPosition.position - rb.position;
 
             direction.Normalize();
@@ -135,7 +137,7 @@ public class EnemyScript : MonoBehaviour
             rotateAmount = Vector3.Cross(direction, -transform.right).z;
 
             rb.angularVelocity = -rotateAmount * rotateSpeed;
-           
+
             rb.velocity = -transform.right * speed;
             this.enemyCollider.transform.rotation = rb.transform.rotation;
         }
@@ -145,28 +147,38 @@ public class EnemyScript : MonoBehaviour
 
             rb.angularVelocity = 0;
             rotateAmount = 0;
-          
+
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == 10)
-        { // right now 10 is player bullet might change (hopefully not)
-            Destroy(this.gameObject, 1.0f);
-            //GetComponent<AudioSource>().Play();
+        {
+            Health--;
             other.gameObject.GetComponent<BulletScript>().Hit();
-            alive = false;
+            if (Health == 0)
+            {
+                Destroy(this.gameObject, 1.0f);
+
+                alive = false;
+            }
         }
         if (other.gameObject.layer == 15)
-        { // right now 10 is player bullet might change (hopefully not)
+        { 
             isActive = true;
         }
         if (other.gameObject.layer == 16)
-        { // right now 10 is player bullet might change (hopefully not)
+        { 
             Destroy(this.gameObject, 1.0f);
             alive = false;
         }
-
+    }
+    void OnCollisionEnter2D(Collision collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            Physics.IgnoreLayerCollision(8, 11);
+        }
     }
 }

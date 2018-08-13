@@ -143,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 1713354896148230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.79, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4399426623516234}
   - {fileID: 4560319502072844}
@@ -303,12 +303,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
   movementType: Follow
-  mainChar: {fileID: 0}
-  speed: 20
+  mainChar: {fileID: 1627652257890398, guid: fe9a2a8fbda705642ac914245aec2c0d, type: 2}
+  speed: 15
   rotateAmount: 0
   radius: 1
-  rotateSpeed: 100
+  rotateSpeed: 500
   cwPath: 1
+  Health: 2
   linearReverse: 0
   horizPath: 0
   allowShoot: 0

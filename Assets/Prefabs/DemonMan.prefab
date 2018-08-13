@@ -147,9 +147,9 @@ GameObject:
   - component: {fileID: 4598122670876848}
   - component: {fileID: 95552793035378286}
   - component: {fileID: 50345660118297462}
-  - component: {fileID: 61370009074343368}
   - component: {fileID: 114779774195433052}
   - component: {fileID: 114675549807452266}
+  - component: {fileID: 60500051496284624}
   m_Layer: 11
   m_Name: DemonMan
   m_TagString: Untagged
@@ -682,8 +682,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265437085289416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.41, y: -1.97, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -889.29004, y: -474.97, z: -0.044588566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4472766282847730}
@@ -942,7 +942,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 500
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -951,8 +951,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61370009074343368
-BoxCollider2D:
+--- !u!60 &60500051496284624
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -963,7 +963,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09484795, y: 2.4537838}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -973,9 +973,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1896958, y: 5.0594954}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4159832, y: 4.759635}
+      - {x: -0.5623245, y: 5.076852}
+      - {x: -0.7769127, y: 3.3593924}
+      - {x: -0.62303543, y: 2.042851}
+      - {x: -0.5498009, y: 0.55824125}
+      - {x: -0.72836494, y: -0.059250593}
+      - {x: 0.11918068, y: -0.05925107}
+      - {x: 0.38599205, y: 2.0125885}
+      - {x: 1.1193848, y: 2.053671}
+      - {x: 1.0916386, y: 3.8704062}
 --- !u!95 &95552793035378286
 Animator:
   serializedVersion: 3
@@ -1025,13 +1034,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
-  movementType: Circle
+  movementType: Line
   mainChar: {fileID: 0}
   speed: 5
-  radius: 1
-  rotateSpeed: 2
+  isActive: 1
+  rotateAmount: 0
+  radius: 10
+  rotateSpeed: 1
   cwPath: 1
+  Health: 5
   linearReverse: 0
-  horizPath: 1
+  horizPath: 0
   allowShoot: 1
-  shotDelay: 1
+  shotDelay: 0.5
