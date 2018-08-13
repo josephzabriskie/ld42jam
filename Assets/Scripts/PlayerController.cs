@@ -130,6 +130,8 @@ public class PlayerController : MonoBehaviour
             {
                 ui.Damage();
                 this.lastTimeHit = Time.time;
+                Animator.SetBool("HitAnimation", true);
+
             }
             if (ui.currentHealth == 0)
             {
