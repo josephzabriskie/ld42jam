@@ -1216,11 +1216,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNames:
-  - LevelZero
+  - LevelOne
+  - LevelTwo
   levelsAccessible: 000000
   victoryScene: VictoryTemp
-  startLevel: 0
-  currLevel: 0
 --- !u!1 &1222350997
 GameObject:
   m_ObjectHideFlags: 0
