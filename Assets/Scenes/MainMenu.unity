@@ -996,11 +996,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f4f95c159fdb6ef43ada6435675a41c9, type: 3}
-    m_FontSize: 30
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1009,7 +1009,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Elon Gave Me Boots
 
-    Now I Musk Run'
+'
 --- !u!222 &781866287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1219,8 +1219,6 @@ MonoBehaviour:
   - LevelZero
   levelsAccessible: 000000
   victoryScene: VictoryTemp
-  startLevel: 0
-  currLevel: 0
 --- !u!1 &1222350997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,7 +2397,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 180.48001}
-  m_SizeDelta: {x: 529.5, y: 96.20001}
+  m_SizeDelta: {x: 900, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070915342
 MonoBehaviour:
