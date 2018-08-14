@@ -14,13 +14,18 @@ public class EnemyScript : MonoBehaviour
     public float speed = 5.0f;
     public bool isActive = false;
     public float rotateAmount;
+    public float activationOffset;
+    private float activationTime;
     private Transform playerPosition;
     PolygonCollider2D enemyCollider;
+    MoveLeftKinematic lk;
+    LevelSupervisor levSup;
     public float radius = 1.0f;
     public float rotateSpeed = 2.0f;
     private float angle = 0.0f;
     public bool cwPath = true;
-    bool alive = true;
+    public bool alive = true;
+    public bool isBoss = false;
     public float Health = 5;
     //Line bool
     public bool linearReverse = false;
@@ -37,14 +42,16 @@ public class EnemyScript : MonoBehaviour
         this.sb = GetComponent<ShootBullet>();
         this.rb = GetComponent<Rigidbody2D>();
         //this.sr = GetComponent<SpriteRenderer>();
-        this.center = this.transform.position; // Set center to where we currently are positioned
-        playerPosition = mainChar.GetComponent<Transform>();
+         // Set center to where we currently are positioned
         this.enemyCollider = GetComponent<PolygonCollider2D>();
+        this.lk = GetComponent<MoveLeftKinematic>();
+        this.playerPosition = mainChar.GetComponent<Transform>();
+        this.levSup = GameObject.FindGameObjectWithTag("LevelSupervisor").GetComponent<LevelSupervisor>();
     }
 
     void Update()
     {
-        if (isActive)
+        if (isActive && Time.time - this.activationTime > this.activationOffset)
         {
             if (Time.time - this.lastShotTime > this.shotDelay && this.alive && this.allowShoot)
             {
@@ -66,7 +73,7 @@ public class EnemyScript : MonoBehaviour
         //Add these lines if you want to make the baddie fly away randomly, polish
         //if (!this.alive)
         //	this.rb.AddForce (new Vector2 (0, Random.Range (0, 10)));
-        if (isActive)
+        if (isActive && Time.time - this.activationTime > this.activationOffset)
         {
             if (this.movementType == "Circle" && this.alive)
                 CircleUpdate();
@@ -97,6 +104,7 @@ public class EnemyScript : MonoBehaviour
 
     void LineUpdate()
     { //Still uses same vars as Circle update, radius, rotatespeed just add new bool for horiz/vert
+        this.lk.speed = 0;
         this.angle += this.rotateSpeed * Time.deltaTime;
         if (this.angle > 6.28319f)
             this.angle -= 6.28319f;
@@ -123,7 +131,7 @@ public class EnemyScript : MonoBehaviour
                 offset = new Vector3(0, Mathf.Sin(this.angle), 0) * this.radius;
             }
         }
-        this.transform.position = this.center + offset;
+        this.transform.position = this.transform.position + offset;
     }
 
     void FollowUpdate()
@@ -153,20 +161,26 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 10)
+        if (other.gameObject.layer == 10 && this.isActive)
         {
             Health--;
             other.gameObject.GetComponent<BulletScript>().Hit();
             if (Health == 0)
             {
-                Destroy(this.gameObject, 1.0f);
 
+                Destroy(this.gameObject, 1.0f);
+                
                 alive = false;
+
+                if (isBoss) {
+                    levSup.LevelDone(true);
+                }
             }
         }
         if (other.gameObject.layer == 15)
         { 
             isActive = true;
+            activationTime = Time.time;
         }
         if (other.gameObject.layer == 16)
         { 
@@ -174,5 +188,11 @@ public class EnemyScript : MonoBehaviour
             alive = false;
         }
     }
-   
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            Physics.IgnoreLayerCollision(8, 11);
+        }
+    }
 }

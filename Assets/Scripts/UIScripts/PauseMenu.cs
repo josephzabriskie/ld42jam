@@ -29,12 +29,14 @@ public class PauseMenu : MonoBehaviour {
 		Debug.Log("Open pause menu");
 		this.menuOpen = true;
 		this.cvs.enabled = true;
+        Time.timeScale = 0;
 	}
 
 	public void CloseMenu(){
 		Debug.Log("Close pause menu");
 		this.menuOpen = false;
 		this.cvs.enabled = false;
+        Time.timeScale = 1;
 	}
 
 	public void GoToMainMenu(){

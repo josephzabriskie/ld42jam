@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1847500901162678}
+  m_RootGameObject: {fileID: 1636239399616182}
   m_IsPrefabAsset: 1
---- !u!1 &1847500901162678
+--- !u!1 &1636239399616182
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4682366974585468}
-  - component: {fileID: 61046965534476398}
+  - component: {fileID: 4582325660396620}
+  - component: {fileID: 61380163637384910}
   m_Layer: 16
   m_Name: DeathBox
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4682366974585468
+--- !u!4 &4582325660396620
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847500901162678}
+  m_GameObject: {fileID: 1636239399616182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -25.3, y: 16.5, z: -0.390625}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61046965534476398
+--- !u!61 &61380163637384910
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847500901162678}
+  m_GameObject: {fileID: 1636239399616182}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

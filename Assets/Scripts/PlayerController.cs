@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     //Movement vars
     private Rigidbody2D rb;
     public GameObject uiPre;
+    private LevelSupervisor LevelSel;
     private UIScript ui;
     float accel = 10f;
     float decel = 1.0f;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         this.sb = GetComponent<ShootBullet>();
         this.lastShotTime = Time.time; // Doing this so that when a wave loads the player doesn't double shoot
         this.ui = uiPre.GetComponent<UIScript>();
+        this.LevelSel = GameObject.FindGameObjectWithTag("LevelSupervisor").GetComponent<LevelSupervisor>();
     }
 
     // Update is called once per frame
@@ -103,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 12)
+        if (other.gameObject.layer == 12 && Time.time - this.lastTimeHit > this.hitDelay)
         {
         Debug.Log("I'm Hit!");
             ui.Damage();
@@ -112,7 +114,9 @@ public class PlayerController : MonoBehaviour
             if (ui.currentHealth == 0)
             {
                 Destroy(this.gameObject, 1.0f);
+                LevelSel.LevelDone(false);
             }
+            this.lastTimeHit = Time.time;
             
         }
         if (other.gameObject.layer == 13)
@@ -126,26 +130,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 11)
         {
             Debug.Log("Collision with enemy");
-            if (Time.time - this.lastTimeHit > this.hitDelay)
-            {
-                ui.Damage();
-                this.lastTimeHit = Time.time;
-                Animator.SetBool("HitAnimation", true);
-
-            }
-            if (ui.currentHealth == 0)
-            {
-                Destroy(this.gameObject, 1.0f);
-            }
-        }
-     
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            Debug.Log("Collision with an Object");
-            if (Time.time - this.lastTimeHit > this.hitDelay)
+            if (Time.time - this.lastTimeHit > this.hitDelay && other.gameObject.GetComponent<EnemyScript>().alive)
             {
                 ui.Damage();
                 this.lastTimeHit = Time.time;
@@ -158,7 +143,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    
 
     PlayerInput getPlayerInput()
     {
