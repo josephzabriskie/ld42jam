@@ -1218,7 +1218,7 @@ MonoBehaviour:
   levelNames:
   - LevelOne
   - LevelTwo
-  levelsAccessible: 000000
+  levelsAccessible: 0000
   victoryScene: VictoryTemp
 --- !u!1 &1222350997
 GameObject:
