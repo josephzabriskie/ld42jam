@@ -1079,7 +1079,7 @@ MonoBehaviour:
   rotateSpeed: 1
   cwPath: 1
   alive: 1
-  Health: 30
+  Health: 10
   linearReverse: 0
   horizPath: 0
   allowShoot: 1

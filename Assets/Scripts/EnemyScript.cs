@@ -19,11 +19,13 @@ public class EnemyScript : MonoBehaviour
     private Transform playerPosition;
     PolygonCollider2D enemyCollider;
     MoveLeftKinematic lk;
+    LevelSupervisor levSup;
     public float radius = 1.0f;
     public float rotateSpeed = 2.0f;
     private float angle = 0.0f;
     public bool cwPath = true;
     public bool alive = true;
+    public bool isBoss = false;
     public float Health = 5;
     //Line bool
     public bool linearReverse = false;
@@ -44,6 +46,7 @@ public class EnemyScript : MonoBehaviour
         this.enemyCollider = GetComponent<PolygonCollider2D>();
         this.lk = GetComponent<MoveLeftKinematic>();
         this.playerPosition = mainChar.GetComponent<Transform>();
+        this.levSup = GameObject.FindGameObjectWithTag("LevelSupervisor").GetComponent<LevelSupervisor>();
     }
 
     void Update()
@@ -164,9 +167,14 @@ public class EnemyScript : MonoBehaviour
             other.gameObject.GetComponent<BulletScript>().Hit();
             if (Health == 0)
             {
-                Destroy(this.gameObject, 1.0f);
 
+                Destroy(this.gameObject, 1.0f);
+                
                 alive = false;
+
+                if (isBoss) {
+                    levSup.LevelDone(true);
+                }
             }
         }
         if (other.gameObject.layer == 15)
