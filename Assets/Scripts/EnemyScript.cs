@@ -161,7 +161,7 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 10 && this.isActive)
+        if (other.gameObject.layer == 10 && this.isActive && Time.time - this.activationTime > this.activationOffset)
         {
             Health--;
             other.gameObject.GetComponent<BulletScript>().Hit();
