@@ -42,6 +42,7 @@ public class PauseMenu : MonoBehaviour {
 	public void GoToMainMenu(){
 		Debug.Log("Go back to Main Menu");
 		SceneManager.LoadScene(this.mainMenuScene);
+        Time.timeScale = 1;
 	}
 
 	public void ExitToDesktop(){
